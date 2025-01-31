@@ -2,15 +2,27 @@ server:
     port: 8080
 spring:
     datasource:
-        url: jdbc:mariadb://127.0.0.1:3307/testdb
+        url: ENC(4K+XWPaEhCjAcojpPZZmcnuwIfP2MZWQE+IDw+HBa4+5O6R/dC9fauM77THK+ocC)
         driver-class-name: org.mariadb.jdbc.Driver
         username: root
-        password: 
+        password: ENC(Y6LJCR+eRpFdl7QSJK4Kpw==)
     jpa:
         database-platform: org.hibernate.dialect.MariaDB106Dialect
-        properties:
+        properties: 
             hibernate:
                 show-sql: true
                 format: true 
         hibernate:
             ddl-auto: create-drop
+mybatis:
+    mapper-locations: classpath:mybatis/mapper/h2/**/**.xml
+    type-handlers-package: dev.beejh02.demo.typehandler
+    type-aliases-package: dev.beejh02.demo.model
+    configuration:
+        map-underscore-to-camel-case: true
+        default-statement-timeout: 30
+        default-fetch-size: 100
+logging:
+    level:
+        root: INFO
+        dev.beejh02.demo.mapper: TRACE
