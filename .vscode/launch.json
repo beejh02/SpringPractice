@@ -19,6 +19,16 @@
             "projectName": "demo",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-PracticeApplication<practice>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.beejh02.practice.PracticeApplication",
+            "projectName": "practice",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
