@@ -4,6 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.study.board.entity.Board;
+
 @Controller
 public class BoardController {
 
@@ -13,10 +15,9 @@ public class BoardController {
     }
 
     @PostMapping("/board/writepro")
-    public String boardwritePro(String title, String content) {
+    public String boardwritePro(Board board) {
         
-        System.out.println("제목 : " + title);
-        System.out.println("내용 : " + content);
+        System.out.println(board.getTitle());
 
         return "";
     }

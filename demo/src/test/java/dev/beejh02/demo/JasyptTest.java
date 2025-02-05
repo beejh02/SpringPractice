@@ -19,7 +19,7 @@ public class JasyptTest {
 
 
     public String jasyptEncoding(String value) {
-        String key = "5^zx62]B6n:$S2b/N#3xjkRC0=k#z:qj";
+        String key = "unknown";
         StandardPBEStringEncryptor pbeEnc = new StandardPBEStringEncryptor();
         pbeEnc.setAlgorithm("PBEWITHMD5ANDDES");
         pbeEnc.setPassword(key);
