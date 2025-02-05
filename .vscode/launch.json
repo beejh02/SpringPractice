@@ -39,6 +39,16 @@
             "projectName": "board",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MembershipApplication<membership>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.study.membership.MembershipApplication",
+            "projectName": "membership",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }

@@ -1,5 +1,7 @@
 package com.study.board.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.study.board.entity.Board;
@@ -18,4 +20,7 @@ public class BoardService {
         boardRepository.save(board);
     }
 
+    public List<Board> boardList() {
+        return boardRepository.findAll();
+    }
 }
