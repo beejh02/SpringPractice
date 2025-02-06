@@ -1,5 +1,7 @@
 package com.study.membership.service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
@@ -36,4 +38,18 @@ public class MemberService {
             return null;
         }
     }
+
+    public List<MemberDTO> findAll() {
+        List<MemberEntity> memberEntityList = memberRepository.findAll();
+        List<MemberDTO> memberDTOList = new ArrayList<>();
+        for(MemberEntity memberEntity: memberEntityList) {
+            // 1
+            memberDTOList.add(MemberDTO.toMemberDTO(memberEntity));
+            // 2
+            // MemberDTO memberDTO = MemberDTO.toMemberDTO(memberEntity);
+            // memberDTOList.add(memberDTO);
+        }
+        return memberDTOList;
+    }
+
 }
