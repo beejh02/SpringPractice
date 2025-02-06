@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.study.membership.dto.MemberDTO;
 import com.study.membership.service.MemberService;
 
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 
 
@@ -28,5 +29,16 @@ public class MemberController {
     public String save(@ModelAttribute MemberDTO memberDTO) {
         memberService.save(memberDTO);
         return "login"; 
+    }
+
+    @PostMapping("/member/login")
+    public String login(@ModelAttribute MemberDTO memberDTO, HttpSession session) {
+        MemberDTO loginResult = memberService.login(memberDTO);
+        if(loginResult != null) {
+            session.setAttribute("loginEmail", loginResult.getMemberEmail());
+            return "main";
+        } else {
+            return "login";
+        }
     }
 }
