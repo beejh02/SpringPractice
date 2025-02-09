@@ -2,10 +2,10 @@ server:
     port: 8080
 spring:
     datasource:
-        url: ENC(4K+XWPaEhCjAcojpPZZmcnuwIfP2MZWQE+IDw+HBa4+5O6R/dC9fauM77THK+ocC)
+        url: jdbc:mariadb://127.0.0.1:3307/testdb
         driver-class-name: org.mariadb.jdbc.Driver
         username: root
-        password: ENC(Y6LJCR+eRpFdl7QSJK4Kpw==)
+        password: ${DB_PASSWORD}
     jpa:
         database-platform: org.hibernate.dialect.MariaDB106Dialect
         properties: 
