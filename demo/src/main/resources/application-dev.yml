@@ -1,4 +1,4 @@
-    spring:
+spring:
     datasource:
         url: jdbc:mariadb://127.0.0.1:3307/testdb
         driver-class-name: org.mariadb.jdbc.Driver

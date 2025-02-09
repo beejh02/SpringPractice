@@ -25,14 +25,14 @@ public class PostController {
         return postService.postList();
     }
 
-    @GetMapping("/{postID}")
-    public Post postDetail(@PathVariable String postID) {
-        return Post.builder()
-                .postId(UUID.randomUUID())
-                .title("title1")
-                .contents("contents1")
-                .author("")
-                .createdDateTime(LocalDateTime.now())
-                .build();
-    }
+    // @GetMapping("/{postID}")
+    // public Post postDetail(@PathVariable String postID) {
+    //     return Post.builder()
+    //             .postId(UUID.randomUUID())
+    //             .title("title1")
+    //             .contents("contents1")
+    //             .author("")
+    //             .createdDateTime(LocalDateTime.now())
+    //             .build();
+    // }
 }
