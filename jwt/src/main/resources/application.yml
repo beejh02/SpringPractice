@@ -16,3 +16,5 @@ spring:
         show-sql: true
         hibernate:
             ddl-auto: none
+    jwt:
+        secret: '%:v({Ae#(r"$Y|Zt+A5>5U/!B*GNCbx-aaaaeeeebbbb99aaaeqnik' # 프로젝트에서만 쓰일 단일 secret key
