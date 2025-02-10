@@ -1,4 +1,4 @@
-package dev.beejh02.demo.controlller;
+package dev.beejh02.demo.controller;
 
 import java.time.LocalDateTime;
 import java.util.List;
