@@ -20,9 +20,10 @@ public class UserService {
         if(userRepository.findByUsername(username).isPresent()) throw new RuntimeException("이미 존재하는 사용자입니다.");
 
         String encodedPassword = passwordEncoder.encode(password);
-        User user = new User();
-        user.setUsername(username);
-        user.setPassword(encodedPassword);
+        User user = User.builder()
+            .username(username)
+            .password(encodedPassword)
+            .build();
         return userRepository.save(user);
     }
 

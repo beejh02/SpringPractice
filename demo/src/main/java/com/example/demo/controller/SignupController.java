@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.dto.SignupRequest;
 import com.example.demo.service.UserService;
 
 import lombok.RequiredArgsConstructor;
@@ -14,7 +15,7 @@ import lombok.RequiredArgsConstructor;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api")
-public class UserController {
+public class SignupController {
 
     private final UserService userService;
     

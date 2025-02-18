@@ -12,8 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.dto.AuthResponse;
 import com.example.demo.dto.LoginRequest;
-
-// import com.example.demo.util.JwtUtil;/
+import com.example.demo.util.JwtUtill;
 
 import lombok.RequiredArgsConstructor;
 
@@ -22,16 +21,16 @@ import lombok.RequiredArgsConstructor;
 @RequestMapping("/api")
 public class LoginController {
     private final AuthenticationManager authenticationManager;
-    private final JwtUtil jwtUtil;
+    private final JwtUtill jwtUtill;
 
     @PostMapping("/user/login")
     public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request) {
         Authentication authentication = authenticationManager.authenticate(
             new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword())
         );
-        SecurityContextHolder.getContext().setAuthentication(request.getUsername);
+        SecurityContextHolder.getContext().setAuthentication(authentication);
         
-        String token = jwtUtil.generateToken(request.getUsername());
+        String token = jwtUtill.generateToken(request.getUsername());
         return ResponseEntity.ok(new AuthResponse(token));
     }
 }
