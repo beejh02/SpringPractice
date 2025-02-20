@@ -30,7 +30,7 @@ public class SecurityConfig {
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers("/user/login").permitAll()
-                .requestMatchers("/dashboard").authenticated()
+                .requestMatchers("/").authenticated()
                 .anyRequest().permitAll()
             )
             .addFilterBefore(new JwtAuthenticationFilter(jwtUtill, userDetailsService), UsernamePasswordAuthenticationFilter.class)
